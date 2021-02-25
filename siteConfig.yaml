@@ -21,7 +21,7 @@ nav:
   - label: Training exercises
     page: developer-portal/index.md
 
-  - label: External docs
+  - label: HealthStream
     icon: ./images/redocly-icon-white.png
     href: https://docs.redoc.ly/developer-portal/introduction/
 

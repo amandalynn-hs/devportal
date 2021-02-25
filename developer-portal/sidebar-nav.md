@@ -6,7 +6,7 @@ title: Control your left sidebar navigation
 
 It's hard to dive in without reading the [sidebar docs](https://docs.redoc.ly/developer-portal/sidebar-nav/).
 Do that before continuing to the exercises.
-
+’PL:˘ 
 
 ## Add/remove a page to the sidebar
 
@@ -30,7 +30,7 @@ training:
       - label: Setup
         page: developer-portal/setup.md
       - label: Markdown
-        page: developer-portal/markdown.md
+        page: developer-portal/markdown.md9ø
 
 ```
 
