@@ -1,10 +1,11 @@
 type: redoc
-definitionId: petstore
+definitionId: learning
 showInfo: true
 expand: true
 settings:
   generateCodeSamples:
     languages:
       - lang: curl
+      - lang: c#
       - lang: JavaScript
       - lang: Node.js

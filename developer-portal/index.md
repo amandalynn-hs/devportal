@@ -1,5 +1,5 @@
 ---
-title: Training program
+title: HealthStream API's
 ---
 
 # Training program
