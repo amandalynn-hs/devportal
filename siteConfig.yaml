@@ -1,11 +1,11 @@
 meta:
-  title: Redocly Training
-  description: The best API documentation generator ever.
+  title: HealthStream
+  description: API Resources provided by HealthStream.
   siteUrl: https://portal-demo.redoc.ly
 headerIcon: ./images/logo.png
 enableToc: true
 oasDefinitions:
-  petstore: ./openapi/petstore.yaml
+  learning: ./openapi/learning.yaml
   # add links to definitions in our API registry by using a fully qualified URL.
 stylesheets:
   - https://fonts.googleapis.com/css?family=Roboto:300,400,600,700
@@ -18,17 +18,16 @@ stylesheets:
 #  - ./static/intercom.js
 nav:
 
-  - label: Training exercises
+  - label: API's
     page: developer-portal/index.md
 
-  - label: HealthStream
-    icon: ./images/redocly-icon-white.png
+  - icon: ./images/HealthStream_Wht.png
     href: https://docs.redoc.ly/developer-portal/introduction/
 
   - search: true
 
 footer:
-  copyrightText: Copyright © Redocly 2019-2020. All right reserved.
+  copyrightText: Copyright © HealthStream 2021. All right reserved.
   columns:
     - group: Legal
       items:

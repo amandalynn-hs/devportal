@@ -1,0 +1,688 @@
+openapi: 3.0.1
+info:
+  title: Learning API
+  version: v1.6
+paths:
+  '/api/organization/{orgId}/assignments/{assignmentId}':
+    get:
+      tags:
+        - Assignments
+      summary: Get an assignment
+      parameters:
+        - name: orgId
+          in: path
+          description: Organization to search
+          required: true
+          schema:
+            type: string
+            description: Organization to search
+            nullable: true
+        - name: assignmentId
+          in: path
+          description: Assignment to retrieve
+          required: true
+          schema:
+            type: string
+            description: Assignment to retrieve
+            nullable: true
+      responses:
+        '200':
+          description: Returns the assignment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Assignment'
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+        '502':
+          description: Server Error
+    delete:
+      tags:
+        - Assignments
+      summary: Delete an assignment
+      parameters:
+        - name: orgId
+          in: path
+          description: Organization to search
+          required: true
+          schema:
+            type: string
+            description: Organization to search
+            nullable: true
+        - name: assignmentId
+          in: path
+          description: Assignment to delete
+          required: true
+          schema:
+            type: string
+            description: Assignment to delete
+            nullable: true
+      responses:
+        '204':
+          description: Success
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+        '502':
+          description: Server Error
+    patch:
+      tags:
+        - Assignments
+      summary: Partial update an assignment
+      description: "The only properties of an assignment that may be updated are the assignment name, the end date, and the courses within the assignment.\r\n\r\nSample Request: \r\n\r\n    {\r\n      \"name\": \"The new assignment name\",\r\n      \"courses\": [{\r\n        \"courseId\": \"b574ccdc-8923-e711-b246-005056b13538\",\r\n        \"isRequiredByInstitution\": false\r\n      }],\r\n      \"endDate\": \"2019-07-20\"\r\n    }"
+      parameters:
+        - name: orgId
+          in: path
+          description: Organization to search
+          required: true
+          schema:
+            type: string
+            description: Organization to search
+            nullable: true
+        - name: assignmentId
+          in: path
+          description: Assignment to update
+          required: true
+          schema:
+            type: string
+            description: Assignment to update
+            nullable: true
+      requestBody:
+        description: Assignment updates to make
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Assignment'
+      responses:
+        '204':
+          description: Success
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+        '502':
+          description: Server Error
+  '/api/organization/{orgId}/assignments':
+    post:
+      tags:
+        - Assignments
+      summary: Create a new assignment
+      parameters:
+        - name: orgId
+          in: path
+          description: Organization to create at
+          required: true
+          schema:
+            type: string
+            description: Organization to create at
+            nullable: true
+      requestBody:
+        description: Assignment to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Assignment'
+      responses:
+        '201':
+          description: Success
+        '400':
+          description: Bad Request
+        '500':
+          description: Server Error
+        '502':
+          description: Server Error
+  '/api/hstream/{hstreamId}/getnrpcarddetails':
+    get:
+      tags:
+        - Hstream
+      summary: Get NRP Card Details
+      parameters:
+        - name: hstreamId
+          in: path
+          description: hStream ID to get NRP card details for
+          required: true
+          schema:
+            type: string
+            description: hStream ID to get NRP card details for
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetNrpCardDetailsResponse'
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  '/api/organization/{orgId}':
+    get:
+      tags:
+        - Organization
+      summary: Get an organization
+      parameters:
+        - name: orgId
+          in: path
+          description: Organization to retrieve
+          required: true
+          schema:
+            type: string
+            description: Organization to retrieve
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organization'
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+        '502':
+          description: Server Error
+  /api/status:
+    get:
+      tags:
+        - Status
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiStatus'
+        '400':
+          description: Bad Request
+  /api/version:
+    get:
+      tags:
+        - Status
+      responses:
+        '200':
+          description: Success
+  '/api/organization/{orgId}/user/{userId}':
+    get:
+      tags:
+        - User
+      summary: Get a user
+      parameters:
+        - name: orgId
+          in: path
+          description: Organization to search
+          required: true
+          schema:
+            type: string
+            description: Organization to search
+            nullable: true
+        - name: userId
+          in: path
+          description: User to retrieve
+          required: true
+          schema:
+            type: string
+            description: User to retrieve
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+        '502':
+          description: Server Error
+  '/api/organization/{orgId}/user/{userId}/removehstreamidmapping':
+    post:
+      tags:
+        - User
+      summary: Remove hStream ID mapping
+      parameters:
+        - name: orgId
+          in: path
+          description: Organization to search
+          required: true
+          schema:
+            type: string
+            description: Organization to search
+            nullable: true
+        - name: userId
+          in: path
+          description: User to remove mapping
+          required: true
+          schema:
+            type: string
+            description: User to remove mapping
+            nullable: true
+      requestBody:
+        description: Request object
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/HstreamIdMappingRequestData'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HstreamIdMappingRequestData'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/HstreamIdMappingRequestData'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/HstreamIdMappingRequestData'
+      responses:
+        '204':
+          description: Success
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+        '502':
+          description: Server Error
+  '/api/organization/{orgId}/user/{userId}/addhstreamidmapping':
+    post:
+      tags:
+        - User
+      summary: Adds a HLC and hStream ID account mapping
+      parameters:
+        - name: orgId
+          in: path
+          description: Organization the user is a part odf
+          required: true
+          schema:
+            type: string
+            description: Organization the user is a part odf
+            nullable: true
+        - name: userId
+          in: path
+          description: User Id inside the HLC
+          required: true
+          schema:
+            type: string
+            description: User Id inside the HLC
+            nullable: true
+      requestBody:
+        description: Hstream Account Data for mapping
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/HstreamIdMappingRequestData'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HstreamIdMappingRequestData'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/HstreamIdMappingRequestData'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/HstreamIdMappingRequestData'
+      responses:
+        '204':
+          description: Success
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+        '502':
+          description: Server Error
+  '/api/organization/{orgId}/user/{userId}/getusernrpcarddetails':
+    get:
+      tags:
+        - User
+      summary: Get NRP Card Details by User ID and Org ID
+      parameters:
+        - name: orgId
+          in: path
+          description: Organization to search
+          required: true
+          schema:
+            type: string
+            description: Organization to search
+            nullable: true
+        - name: userId
+          in: path
+          description: User to search
+          required: true
+          schema:
+            type: string
+            description: User to search
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserNrpCardDetails'
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+        '502':
+          description: Server Error
+  '/api/organization/{orgId}/user':
+    get:
+      tags:
+        - User
+      summary: Get a user by user name.
+      parameters:
+        - name: orgId
+          in: path
+          description: Organization to search
+          required: true
+          schema:
+            type: string
+            description: Organization to search
+            nullable: true
+        - name: UserName
+          in: query
+          description: Gets or sets user name.
+          required: true
+          schema:
+            type: string
+            description: Gets or sets user name.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserByUserNameModel'
+        '400':
+          description: Bad Request
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+        '502':
+          description: Server Error
+components:
+  schemas:
+    Course:
+      type: object
+      properties:
+        CourseId:
+          type: string
+          nullable: true
+        IsRequiredByInstitution:
+          type: boolean
+          default: false
+        CourseVersion:
+          type: integer
+          format: int32
+          default: 0
+      additionalProperties: false
+    Assignment:
+      type: object
+      properties:
+        Id:
+          type: string
+          format: uuid
+        StudentId:
+          type: string
+          nullable: true
+        Courses:
+          type: array
+          items:
+            $ref: '#/components/schemas/Course'
+          nullable: true
+        Name:
+          type: string
+          nullable: true
+        EffectiveDate:
+          type: string
+          format: date
+          nullable: true
+        StartDate:
+          type: string
+          format: date
+          nullable: true
+        DueDate:
+          type: string
+          format: date
+          nullable: true
+        EndDate:
+          type: string
+          format: date
+          nullable: true
+        InstitutionId:
+          type: string
+          nullable: true
+        ReAssignFailedCourses:
+          type: boolean
+          default: false
+      additionalProperties: false
+    GetNrpCardDetailsResponse:
+      type: object
+      properties:
+        NrpId:
+          type: string
+          nullable: true
+        NrpRank:
+          type: string
+          nullable: true
+        NrpStatus:
+          type: string
+          nullable: true
+        ExpirationDate:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Organization:
+      type: object
+      properties:
+        Id:
+          type: string
+          format: uuid
+        Name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ApiDependencyType:
+      enum:
+        - 0
+        - 1
+        - 2
+      type: integer
+      format: int32
+    ApiDependency:
+      type: object
+      properties:
+        Name:
+          type: string
+          nullable: true
+        Version:
+          type: string
+          nullable: true
+        Status:
+          type: string
+          nullable: true
+        Type:
+          $ref: '#/components/schemas/ApiDependencyType'
+      additionalProperties: false
+    ApiStatus:
+      type: object
+      properties:
+        Name:
+          type: string
+          nullable: true
+        Version:
+          type: string
+          nullable: true
+        Status:
+          type: string
+          nullable: true
+        Dependencies:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiDependency'
+          nullable: true
+      additionalProperties: false
+    UserStudent:
+      type: object
+      properties:
+        DepartmentId:
+          type: string
+          description: Gets or sets the department org node id from the user student record
+          format: uuid
+        DepartmentName:
+          type: string
+          description: Gets or sets department Name
+          nullable: true
+        Manager:
+          type: string
+          description: Gets or sets the Manager/Competency Rater
+          nullable: true
+        UserStudentId:
+          type: string
+          description: Gets or sets user student Id
+          format: uuid
+      additionalProperties: false
+      description: The user student model.
+    User:
+      type: object
+      properties:
+        Id:
+          type: string
+          description: Gets or sets the userId
+          format: uuid
+        Username:
+          type: string
+          description: Gets or sets the username
+          nullable: true
+        FirstName:
+          type: string
+          description: Gets or sets the First Name
+          nullable: true
+        LastName:
+          type: string
+          description: Gets or sets the Last Name
+          nullable: true
+        MiddleName:
+          type: string
+          description: Gets or sets the Middle Name
+          nullable: true
+        Email:
+          type: string
+          description: Gets or sets the email address
+          nullable: true
+        UserStudents:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserStudent'
+          description: Gets or sets list of user students list.
+          nullable: true
+      additionalProperties: false
+      description: The user model.
+    HstreamIdMappingRequestData:
+      type: object
+      properties:
+        HstreamId:
+          type: string
+          nullable: true
+        UserProfileId:
+          type: string
+          nullable: true
+        AuditHstreamId:
+          type: string
+          nullable: true
+      additionalProperties: false
+    UserNrpCardDetails:
+      type: object
+      properties:
+        NrpRank:
+          type: string
+          nullable: true
+        NrpId:
+          type: string
+          nullable: true
+        NrpStatus:
+          type: string
+          nullable: true
+        UserId:
+          type: string
+          nullable: true
+        UserCertificationId:
+          type: string
+          nullable: true
+        CertifyingBodyId:
+          type: string
+          nullable: true
+        CertifyingBodyName:
+          type: string
+          nullable: true
+        CertificationId:
+          type: string
+          nullable: true
+        CertificationName:
+          type: string
+          nullable: true
+        CertificationAcronym:
+          type: string
+          nullable: true
+        CertificationNumber:
+          type: string
+          nullable: true
+        ExpirationDate:
+          type: string
+          nullable: true
+        IsSystemManaged:
+          type: boolean
+      additionalProperties: false
+    UserByUserNameModel:
+      type: object
+      properties:
+        Id:
+          type: string
+          description: Gets or sets the userId
+          format: uuid
+        Username:
+          type: string
+          description: Gets or sets the username
+          nullable: true
+        FirstName:
+          type: string
+          description: Gets or sets the First Name
+          nullable: true
+        LastName:
+          type: string
+          description: Gets or sets the Last Name
+          nullable: true
+        MiddleName:
+          type: string
+          description: Gets or sets the Middle Name
+          nullable: true
+        Email:
+          type: string
+          description: Gets or sets the email address
+          nullable: true
+      additionalProperties: false
+      description: The get user by user name model.
