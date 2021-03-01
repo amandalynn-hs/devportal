@@ -6,4 +6,19 @@ healthstream:
       - label: Info (Business)
         page: developer-portal/learning_business_content.md
       - label: Definition
-        page: openapi/reference.page.yaml/*
+        page: openapi/learning.page.yaml/*
+  - group: eChannel API
+    expanded: true
+    pages:
+      - label: Info (Business)
+        page: developer-portal/learning_business_content.md
+      - label: Definition
+        page: openapi/echannel.page.yaml/*
+  - group: Notification API
+    expanded: true
+    pages:
+      - label: Info (Business)
+        page: developer-portal/learning_business_content.md
+      - label: Definition
+        page: openapi/notification.page.yaml/*
+

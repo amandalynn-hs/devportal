@@ -6,6 +6,8 @@ headerIcon: ./images/logo.png
 enableToc: true
 oasDefinitions:
   learning: ./openapi/learning.yaml
+  echannel: https://echannel.dev.hstream.net/api/docs/v1.3.0/swagger.json
+  notification: https://notification.dev.hstream.net/api/docs/v1.2/swagger.json
   # add links to definitions in our API registry by using a fully qualified URL.
 stylesheets:
   - https://fonts.googleapis.com/css?family=Roboto:300,400,600,700
