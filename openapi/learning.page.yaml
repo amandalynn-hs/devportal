@@ -1,0 +1,11 @@
+type: redoc
+definitionId: learning
+showInfo: true
+expand: true
+settings:
+  generateCodeSamples:
+    languages:
+      - lang: curl
+      - lang: C#
+      - lang: JavaScript
+      - lang: Node.js
