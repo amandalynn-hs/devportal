@@ -101,7 +101,7 @@ Groups can contain groups and pages.
 This is deeper nesting than you will ever need.
 
 ```yaml
-  - group: Admin
+  - group: Admin1
     expanded: true
     pages:
       - group: Routine

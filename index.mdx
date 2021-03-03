@@ -28,15 +28,15 @@ import foundOrPrivate from './images/found-or-private.svg';
 
 export default LandingLayout;
 
-<Jumbotron>
-  <NavBar location={props.location} standalone={false} />
-  <H1 Style="color:pink;">HealthStream Developer Portal</H1>
-  <H2>A starter developer portal with training exercises</H2>
+<Jumbotron pb="3.5em" flexDirection="column" pt="">
+  <NavBar location={props.location} standalone={false} pl="0"/>
+   <H1 mt="0.75em">hStream Developer Portal</H1>
+  <H2 mb="0.75em">Build your own solutions from the power of the HealthStream Ecosystem.</H2>
   <Flex p={20} justifyContent="center">
     {/* <Button inversed large to="https://app.redoc.ly">
       Redocly app
     </Button> */}
-    <Button inversed transparent large to="developer-portal/index.md">
+    <Button inversed  large to="developer-portal/index.md">
       Get started
     </Button>
     {/* <Button inversed transparent large>
@@ -46,26 +46,17 @@ export default LandingLayout;
 </Jumbotron>
 <Box my={25}>
   <SectionHeader>
-    Create your <Emphasis> developer portal </Emphasis> today!
+    Experience the <Emphasis> power </Emphasis> of the <Emphasis> HealthStream Ecosystem</Emphasis>!
   </SectionHeader>
   <FlexSection justifyContent="space-around" flexWrap="wrap">
-    <ThinTile to="developer-portal/index.md" icon={icon1} header="Rock">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo
-        invenire aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril
-        labitur an usu.Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea
-        justo invenire aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing.
+    <ThinTile to="developer-portal/coming_soon.md" icon={icon1} header="Learning API">
+         [Business Content - Short Description with link to Learning API Overview md]
     </ThinTile>
-    <ThinTile to="developer-portal/index.md" icon={launchFastIcon} header="Paper">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.
+    <ThinTile to="developer-portal/coming_soon.md" icon={launchFastIcon} header="Notification API">
+         [Business Content - Short Description with link to Notification API Overview md]
     </ThinTile>
-    <ThinTile to="contact.mdx" icon={icon3} header="Scissors">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.
+    <ThinTile to="developer-portal/coming_soon.md" icon={icon3} header="eChannel API">
+         [Business Content - Short Description with link to eChannel API Overview md]
     </ThinTile>
   </FlexSection>
   {/* <Jumbotron parallaxEffect bgImage={icon1}>
@@ -74,28 +65,20 @@ export default LandingLayout;
   </Jumbotron> */}
   <SectionHeader>
     <Emphasis>Need help? </Emphasis>
-    Try our training exercises.
+    Explore these topics
   </SectionHeader>
   <FlexSection justifyContent="space-around" flexWrap="wrap">
-    <WideTile to="developer-portal/index.md" header="Rock">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.
+    <WideTile to="developer-portal/coming_soon.md" header="Getting Started">
+        [Business Content - Short Description with link to Getting Started md]
     </WideTile>
-    <WideTile to="developer-portal/index.md" header="Paper">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.
+    <WideTile to="developer-portal/coming_soon.md" header="Authentication and Authorization">
+         [Business Content - Short Description with link to Authentication and Authorization md]
     </WideTile>
-    <WideTile to="developer-portal/index.md" header="Scissors">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.
+    <WideTile to="developer-portal/coming_soon.md" header="Quick Reference">
+          [Business Content - Short Description with link to Quick Reference md]
     </WideTile>
-    <WideTile to="developer-portal/index.md" header="Go">
-        Lorem ipsum dolor sit amet, pri putent oportere quaerendum in, ea mea justo invenire
-        aliquando. Usu modo suavitate ea. Et sed labitur epicurei adipiscing. Nibh zril labitur
-        an usu.
+    <WideTile to="developer-portal/coming_soon.md" header="Glossary">
+        [Business Content - Short Description with link to Glossary md]
     </WideTile>
   </FlexSection>
 </Box>

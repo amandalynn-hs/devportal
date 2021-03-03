@@ -11,14 +11,14 @@ healthstream:
     expanded: true
     pages:
       - label: Info (Business)
-        page: developer-portal/learning_business_content.md
+        page: developer-portal/coming_soon.md
       - label: Definition
         page: openapi/echannel.page.yaml/*
   - group: Notification API
     expanded: true
     pages:
       - label: Info (Business)
-        page: developer-portal/learning_business_content.md
+        page: developer-portal/coming_soon.md
       - label: Definition
         page: openapi/notification.page.yaml/*
 

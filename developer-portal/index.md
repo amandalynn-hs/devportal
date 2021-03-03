@@ -7,9 +7,11 @@ Connect with the HealthStream Ecosystem by utilizing our APIs to interact with o
 
 Browse the APIs we have available today:
 
-+ Learning
++ Learning API
      - Short description here
-+ Content
++ Notification API
+     - Short description here
++ eChannel API
      - Short description here
 
 ## Example Solutions

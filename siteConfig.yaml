@@ -2,7 +2,7 @@ meta:
   title: HealthStream
   description: API Resources provided by HealthStream.
   siteUrl: https://portal-demo.redoc.ly
-headerIcon: ./images/logo.png
+headerIcon: ./images/hStream-Wht.png
 enableToc: true
 oasDefinitions:
   learning: ./openapi/learning.yaml
@@ -20,11 +20,11 @@ stylesheets:
 #  - ./static/intercom.js
 nav:
 
-  - label: API's
-    page: developer-portal/index.md
+  # - label: API's
+  #   page: developer-portal/index.md
 
-  - icon: ./images/HealthStream_Wht.png
-    href: https://docs.redoc.ly/developer-portal/introduction/
+  # - icon: ./images/HealthStream_Wht.png
+  #   href: https://docs.redoc.ly/developer-portal/introduction/
 
   - search: true
 
