@@ -20,12 +20,12 @@ export const theme = {
       // dark: ({ colors }) => darken(colors.tonalOffset, colors.primary.main),
       // contrastText: ({ colors }) => readableColor(colors.primary.main),
     },
-    // success: {
-    //   main: '#00aa13',
-    //   light: ({ colors }) => lighten(colors.tonalOffset * 3, colors.success.main),
-    //   dark: ({ colors }) => darken(colors.tonalOffset, colors.success.main),
-    //   contrastText: ({ colors }) => readableColor(colors.success.main),
-    // },
+    success: {
+      main: '#28A746',
+      //   light: ({ colors }) => lighten(colors.tonalOffset * 3, colors.success.main),
+      //   dark: ({ colors }) => darken(colors.tonalOffset, colors.success.main),
+      //   contrastText: ({ colors }) => readableColor(colors.success.main),
+    },
     // error: {
     //   main: '#e53935',
     //   light: ({ colors }) => lighten(colors.tonalOffset * 2, colors.error.main),
